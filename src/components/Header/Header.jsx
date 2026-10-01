@@ -32,12 +32,12 @@ export default function Header() {
         <input type="text" placeholder="Search for products..." value={searchQuery} onChange={handleSearchChange} className={styles.searchInput} />
       </div>
       <div className={styles.navCta}>
-        <button onClick={toggleTheme} className={styles.theme.btn}>
+        <button onClick={toggleTheme} className={styles.themeBtn || "theme-btn"}>
           {theme === "light" ? "🌙 Dark" : "☀️ Light"}
         </button>
       </div>
       <Link to="/cart" className={styles.lintCart}>
-        Shopping Cart {cartCount > 0 && <span className={styles.badge}>({cartCount})</span>}
+        Shopping Cart {cartCount > 0 && <span className={styles.badge || "badge"}>({cartCount})</span>}
       </Link>
     </header>
   );
