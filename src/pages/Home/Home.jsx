@@ -68,7 +68,7 @@ export default function Home() {
               <div key={product.id} className={styles.productCard}>
                 <img src={product.thumbnail} alt={product.title} className={styles.productImg} />
                 <h3 className={styles.productTitleCard}>{product.title}</h3>
-                <p className={styles.productPrice}>\${product.price}</p>
+                <p className={styles.productPrice}>${product.price}</p>
                 <p className={styles.productCat}>Category: {product.category}</p>
                 <Link to={`/products/${product.id}`} className={styles.detailLinks}>
                   See more
