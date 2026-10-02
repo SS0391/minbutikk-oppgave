@@ -31,7 +31,7 @@ export default function Cart() {
                 <p className={styles.productPrice}>${item.price}</p>
               </div>
               <div className={styles.quantityControl}>
-                {/*Delete or add a product*/}
+                {/**Delete or add a product*/}
                 <button onClick={() => updateQuantity(item.id, item.quantity - 1)} className={styles.quanBtn}>
                   -
                 </button>
@@ -43,11 +43,27 @@ export default function Cart() {
               <div className={styles.totalProducts}>
                 <p>${(item.price * item.quantity).toFixed(2)}</p>
               </div>
+              {/** User can remove the entire product from the cart */}
               <button onClick={() => removeFromCart(item.id)} className={styles.removeBtn} aria-label={`Remove ${item.title}`}>
                 Remove
               </button>
             </div>
           ))}
+        </div>
+
+        <div className={styles.summaryCard}>
+          <h2>Summary</h2>
+          <div className={styles.sumRow}>
+            <h4>Number of products</h4>
+            <h5>{cartCount}</h5>
+          </div>
+          <div className={`${styles.sumRow} ${styles.totalSumRow}`}>
+            <h4>Total Amount</h4>
+            <h5>{cartTotal.toFixed(2)}</h5>
+          </div>
+          <button onClick={() => alert("Thanks for buying our products")} className={styles.btnCheck}>
+            Go to checkout
+          </button>
         </div>
       </div>
     </div>
