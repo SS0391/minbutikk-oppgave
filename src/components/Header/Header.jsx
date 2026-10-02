@@ -14,7 +14,8 @@ export default function Header() {
 
   const handleSearchChange = (e) => {
     const value = e.target.value;
-
+    // user will be pushed back to home page to see the user search
+    navigate("/");
     if (value) {
       setSearchParams({ search: value });
     } else {

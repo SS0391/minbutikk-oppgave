@@ -20,5 +20,10 @@ export function ThemeProvider({ children }) {
 }
 
 export function useTheme() {
-  return useContext(ThemeContext);
+  const context = useContext(ThemeContext);
+
+  if (context === undefined) {
+    throw new Error("useTheme must be inside a ThemeProvider");
+  }
+  return context;
 }

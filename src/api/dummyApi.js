@@ -7,7 +7,7 @@ const api = axios.create({
   headers: { "Content-Type": "application/json" },
 });
 
-export const fetchProducts = async ({ limit = 12, skip = 0, search = "", category = "" }) => {
+export const fetchProducts = async ({ limit = 12, skip = 0, search = "", categorySlug = "" }) => {
   if (search) {
     const response = await api.get(`/products/search`, {
       params: { q: search, limit, skip },
@@ -15,8 +15,8 @@ export const fetchProducts = async ({ limit = 12, skip = 0, search = "", categor
     return response.data;
   }
 
-  if (category) {
-    const response = await api.get(`/products/category/${category}`, {
+  if (categorySlug) {
+    const response = await api.get(`/products/category/${categorySlug}`, {
       params: { limit, skip },
     });
     return response.data;

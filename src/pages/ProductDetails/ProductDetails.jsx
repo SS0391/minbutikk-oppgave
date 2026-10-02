@@ -23,7 +23,7 @@ export default function ProductDetails() {
   if (isLoading) return <Spinner />;
 
   if (isError) {
-    <div className={styles.error}>Kunne ikke hente produktet: {error.message}</div>;
+    return <div className={styles.error}>Could not find product {error.message}</div>;
   }
 
   return (
@@ -42,11 +42,11 @@ export default function ProductDetails() {
         </div>
         <div className={styles.productStatus}>
           <h5 className={styles.productRating}>⭐ {product.rating} / 5</h5>
-          <h5 className={styles.productInStock > 0 ? styles.inStock : styles.outOfStock}>{product.stock > 0 ? `In store (${product.stock})` : "All out"}</h5>
+          <h5 className={styles.productStock > 0 ? styles.inStock : styles.outOfStock}>{product.stock > 0 ? `In store (${product.stock})` : "All out"}</h5>
+          <button onClick={() => addToCart(product)} disabled={product.stock <= 0} className={styles.addBtn}>
+            Add to cart
+          </button>
         </div>
-        <button onClick={() => addToCart(product)} disabled={product.stock <= 0}>
-          Add to cart
-        </button>
       </div>
     </div>
   );
