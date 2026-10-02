@@ -1,3 +1,7 @@
+import styles from "./Cart.module.css";
+import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext/CartContext.jsx";
+
 export default function Cart() {
-  return <h1>Handlekurven</h1>;
+  const { cart, removeFromCart, updateQuantity, cartTotal, cartCount } = useCart();
 }
