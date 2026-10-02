@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { fetchCategories, fetchProducts } from "../../api/dummyApi.js";
 import { useQuery } from "@tanstack/react-query";
 import styles from "./Home.module.css";
+import ProductCard from "../../components/ProductCard/ProductCard.jsx";
 
 export default function Home() {
   const limit = 12;
@@ -65,15 +66,7 @@ export default function Home() {
         <>
           <div className={styles.productsCont}>
             {productData?.products.map((product) => (
-              <div key={product.id} className={styles.productCard}>
-                <img src={product.thumbnail} alt={product.title} className={styles.productImg} />
-                <h3 className={styles.productTitleCard}>{product.title}</h3>
-                <p className={styles.productPrice}>${product.price}</p>
-                <p className={styles.productCat}>Category: {product.category}</p>
-                <Link to={`/products/${product.id}`} className={styles.detailLinks}>
-                  See more
-                </Link>
-              </div>
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
 
