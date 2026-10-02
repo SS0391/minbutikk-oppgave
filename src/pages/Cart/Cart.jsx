@@ -31,6 +31,10 @@ export default function Cart() {
                 <p className={styles.productPrice}>${item.price}</p>
               </div>
               <div className={styles.quantityControl}>
+                <button onClick={() => updateQuantity(item.id, item.quantity - 1)} className={styles.quanBtn}>
+                  -
+                </button>
+                <h5 className={styles.quanNumber}>{item.quantity}</h5>
                 <button onClick={() => updateQuantity(item.id, item.quantity + 1)} className={styles.quanBtn}>
                   +
                 </button>
