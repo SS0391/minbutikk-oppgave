@@ -31,6 +31,7 @@ export default function Cart() {
                 <p className={styles.productPrice}>${item.price}</p>
               </div>
               <div className={styles.quantityControl}>
+                {/*Delete or add a product*/}
                 <button onClick={() => updateQuantity(item.id, item.quantity - 1)} className={styles.quanBtn}>
                   -
                 </button>
@@ -39,6 +40,12 @@ export default function Cart() {
                   +
                 </button>
               </div>
+              <div className={styles.totalProducts}>
+                <p>${(item.price * item.quantity).toFixed(2)}</p>
+              </div>
+              <button onClick={() => removeFromCart(item.id)} className={styles.removeBtn} aria-label={`Remove ${item.title}`}>
+                Remove
+              </button>
             </div>
           ))}
         </div>
