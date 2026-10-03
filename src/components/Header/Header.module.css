@@ -1,0 +1,113 @@
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  border-bottom: 2px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--nav-text);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logo:hover {
+  opacity: 0.9;
+  text-shadow: 0 0 8px var(--accent-color);
+}
+
+.searchCont {
+  flex-grow: 1;
+  max-width: 500px;
+  display: flex;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 0.95rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+.navCta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.themeBtn {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--nav-text);
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.themeBtn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent-color);
+}
+
+.lintCart {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--nav-text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+.badge {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  border-radius: 10px;
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
+/* Media Different screen */
+@media (max-width: 768px) {
+  .headerTop {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .searchCont {
+    width: 100%;
+    max-width: none;
+  }
+  .navCta {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,12 @@
+.appLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.mainContent {
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
+}

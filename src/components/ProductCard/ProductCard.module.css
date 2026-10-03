@@ -16,3 +16,79 @@
   z-index: 2;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
+
+:global(html.dark) .card:hover {
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.5),
+    0 0 10px rgba(220, 38, 38, 0.15);
+}
+
+.img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: var(--bg-color);
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+  /* Kutter teksten etter 2 linjer så griddet forblir ryddig */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 2.6rem;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 0 0 15px 0;
+  color: var(--text-color);
+}
+
+/* Buttons & CTA */
+
+.seeMoreBtn {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  background-color: var(--nav-bg);
+  color: var(--nav-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: auto; /* Låser knappen helt til bunnen av kortet */
+  border: 1px solid var(--border-color);
+}
+
+.seeMoreBtn:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-color);
+}
