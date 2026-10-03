@@ -84,6 +84,16 @@
   text-transform: uppercase;
 }
 
+.cartIcon {
+  font-size: 1.6rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.lintCart:hover .cartIcon {
+  transform: scale(1.15);
+}
+
 .badge {
   background-color: var(--accent-color);
   color: #ffffff;

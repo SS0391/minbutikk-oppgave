@@ -38,7 +38,7 @@ export default function Header() {
         </button>
       </div>
       <Link to="/cart" className={styles.lintCart}>
-        Shopping Cart {cartCount > 0 && <span className={styles.badge || "badge"}>({cartCount})</span>}
+        <span className={styles.cartIcon}>🛒</span> {cartCount > 0 && <span className={styles.badge || "badge"}>({cartCount})</span>}
       </Link>
     </header>
   );
